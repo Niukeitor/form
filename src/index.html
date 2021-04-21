@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo with Vanilla.js</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
+
   <body>
     <div class="container  border rounded mt-4 p-0">
       <!--BARRA-->
@@ -15,7 +23,11 @@
         <!--ALERT-->
         <div class="row">
           <div class="col">
-            <div class="alert alert-danger col font-weight-bold" role="alert">
+            <div
+              class="alert alert-danger col font-weight-bold"
+              role="alert"
+              id="alertError"
+            >
               Some fields are missing
             </div>
           </div>
@@ -28,10 +40,11 @@
               <div class="form-group">
                 <label for="cardNumber">Card #</label>
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="cardNumber"
                   placeholder="XXXXXXXXXXXXXX"
+                  required
                 />
               </div>
             </div>
@@ -39,7 +52,9 @@
               <div class="form-group">
                 <label for="cvcNumber">CVC#</label>
                 <input
-                  type="text"
+                  type="number"
+                  min="3"
+                  max="3"
                   class="form-control"
                   id="cvcNumber"
                   placeholder="0000"
@@ -57,7 +72,7 @@
                   </div>
                   <div class="col">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
                       id="amount"
                       placeholder="Amount"
@@ -113,7 +128,7 @@
             </div>
             <div class="col-3">
               <label for="postalCode">Postal Code</label>
-              <input type="text" class="form-control" id="postalCode" />
+              <input type="number" class="form-control" id="postalCode" />
               <div class="invalid-feedback">
                 Please provide a valid zip.
               </div>
@@ -196,18 +211,18 @@
               </div>
             </div>
           </div>
+          <nav
+            class="navbar navbar-light bg-light d-flex justify-content-end border-top"
+          >
+            <span class="navbar-brand mb-0 h1">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary" id="sendBtn">
+                Send
+              </button></span
+            >
+          </nav>
         </form>
       </div>
-      <nav
-        class="navbar navbar-light bg-light d-flex justify-content-end border-top"
-      >
-        <span class="navbar-brand mb-0 h1">
-          <button type="button" class="btn btn-secondary">Cancel</button>
-          <button type="submit" class="btn btn-primary" id="sendBtn">
-            Send
-          </button></span
-        >
-      </nav>
     </div>
   </body>
 </html>
